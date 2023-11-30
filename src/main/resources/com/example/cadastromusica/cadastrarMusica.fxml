@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000505;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastromusica.Controller.MusicaController">
+
+      <Button fx:id="homebutton" mnemonicParsing="false" onAction="#backHome" style="-fx-background-color: #000505;" text="⇦" textAlignment="CENTER" textFill="#2ba84a">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <VBox fx:id="musicaVbox" alignment="CENTER" layoutY="10.0" prefHeight="400.0" prefWidth="610.0">
+
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+
+                  <Group>
+
+                        <Text fill="WHITE" layoutY="-5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome da música" />
+                        <TextField fx:id="nomeTextField" prefHeight="26.0" prefWidth="251.0" style="-fx-max-width: 110px;">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+
+                  </Group>
+                  <Group>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+
+                        <Text fill="WHITE" layoutY="-5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="genero(s) da música" />
+                        <TextField fx:id="generoTextField" prefHeight="26.0" prefWidth="260.0" style="-fx-max-width: 110px;">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+
+                  </Group>
+                  <Group>
+
+                        <Text fill="WHITE" layoutY="-5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="duração" />
+                        <TextField fx:id="duracaoTextField" prefHeight="26.0" prefWidth="251.0" style="-fx-max-width: 110px;">
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+
+                  </Group>
+
+            </HBox>
+            <Button onAction="#cadastrar" prefHeight="33.0" prefWidth="66.0" text="cadastrar">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <TableView fx:id="musicaTableView" prefHeight="200.0" prefWidth="600.0">
+               <columns>
+                  <TableColumn fx:id="nomeColumn" prefWidth="200.0" text="Nome" />
+                  <TableColumn fx:id="generoColumn" prefWidth="200.0" text="Genero(s)" />
+                  <TableColumn fx:id="duracaoColumn" prefWidth="200.0" text="Ano de lançamento" />
+               </columns>
+            </TableView>
+
+      </VBox>
+
+</AnchorPane>

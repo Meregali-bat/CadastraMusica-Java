@@ -3,44 +3,31 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" fillWidth="false" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="310.0" spacing="20.0" style="-fx-background-color: #0D0A0B;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.example.cadastromusica.HelloController">
+<VBox fx:id="homeVbox" alignment="CENTER" fillWidth="false" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="563.0" prefWidth="310.0" spacing="20.0" style="-fx-background-color: #0D0A0B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastromusica.Controller.homeController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="50.0" />
     </padding>
-   <children>
+
       <Label alignment="TOP_CENTER" contentDisplay="TOP" translateY="-60.0">
          <graphic>
-            <Text fill="#f3eff5" strokeType="OUTSIDE" strokeWidth="0.0" text="Seja bem vindo ao" textAlignment="CENTER" />
+            <Text fill="#f3eff5" strokeType="OUTSIDE" strokeWidth="0.0" text="Seja bem vindo ao Cadastro Musical" textAlignment="CENTER" />
          </graphic>
       </Label>
       <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="21.0" prefWidth="141.0" translateY="-98.0">
          <graphic>
-            <Text fill="#f3eff5" strokeType="OUTSIDE" strokeWidth="0.0" text="CadastraMúsicas" wrappingWidth="175.38461303710938">
+            <Text fill="#f3eff5" strokeType="OUTSIDE" strokeWidth="0.0" text="O que deseja fazer?" textAlignment="CENTER" wrappingWidth="175.38461303710938">
                <font>
-                  <Font name="Fira Code Regular" size="19.0" />
+                  <Font name="Fira Code Regular" size="14.0" />
                </font>
             </Text>
          </graphic>
       </Label>
-      <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="21.0" prefWidth="141.0" textFill="RED">
-         <graphic>
-            <TextField style="-fx-background-color: #0D0A0B; -fx-background-radius: 16px; -fx-border-color: #72B01D;" text="Email" />
-         </graphic>
-      </Label>
-      <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="21.0" prefWidth="141.0" textFill="RED">
-         <graphic>
-            <TextField style="-fx-background-color: #0D0A0B; -fx-background-radius: 16px; -fx-border-color: #72B01D;" text="Senha" />
-         </graphic>
-      </Label>
-      <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="21.0" prefWidth="141.0">
-         <graphic>
-            <Button mnemonicParsing="false" style="-fx-background-color: #72B01D; -fx-background-radius: 16px;" text="Logar" textAlignment="CENTER" />
-         </graphic>
-      </Label>
-   </children>
+      <Button fx:id="albumbutton" mnemonicParsing="false" onAction="#goToAlbum" style="-fx-background-color: #2ba84a; -fx-background-radius: 4px;" text="Cadastrar album" />
+      <Button fx:id="musicabutton" mnemonicParsing="false" onAction="#goToArtista" style="-fx-background-color: #2ba84a; -fx-background-radius: 4px;" text="Cadastrar música" />
+      <Button fx:id="artistabutton" mnemonicParsing="false" onAction="#goToMusica" style="-fx-background-color: #2ba84a; -fx-background-radius: 4px;" text="Cadastrar artista" />
+
 </VBox>
