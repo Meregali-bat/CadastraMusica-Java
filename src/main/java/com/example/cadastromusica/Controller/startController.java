@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-public class homeController {
+public class startController {
 
     public Button albumbutton;
 

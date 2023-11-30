@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -15,14 +16,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000505;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastromusica.Controller.MusicaController">
 
-      <Button fx:id="homebutton" mnemonicParsing="false" onAction="#backHome" style="-fx-background-color: #000505;" text="⇦" textAlignment="CENTER" textFill="#2ba84a">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <VBox fx:id="musicaVbox" alignment="CENTER" layoutY="10.0" prefHeight="400.0" prefWidth="610.0">
+    <Button fx:id="homebutton" mnemonicParsing="false" onAction="#backHome" prefHeight="52.0" prefWidth="55.0" style="-fx-background-color: #000505;" text="⇦" textAlignment="CENTER" textFill="#2ba84a">
+        <font>
+            <Font size="29.0" />
+        </font>
+    </Button>
+      <VBox fx:id="musicaVbox" alignment="CENTER" layoutY="60.0" prefHeight="350.0" prefWidth="610.0">
 
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="610.0">
 
                   <Group>
 
@@ -76,12 +77,26 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <TableView fx:id="musicaTableView" prefHeight="200.0" prefWidth="600.0">
-               <columns>
-                  <TableColumn fx:id="nomeColumn" prefWidth="200.0" text="Nome" />
-                  <TableColumn fx:id="generoColumn" prefWidth="200.0" text="Genero(s)" />
-                  <TableColumn fx:id="duracaoColumn" prefWidth="200.0" text="Ano de lançamento" />
-               </columns>
+            <TableView fx:id="musicaTableView" maxWidth="450.0" prefHeight="227.0" prefWidth="450.0">
+                <columns>
+                    <TableColumn fx:id="nomeColumn" prefWidth="150" text="Nome">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="nome" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="generoColumn" prefWidth="150" text="Genero(s)">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="genero" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="duracaoColumn" prefWidth="150" text="Duração">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="duracao" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
             </TableView>
 
       </VBox>

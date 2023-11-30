@@ -41,11 +41,11 @@ public class AlbumController {
     private VBox albumVbox;
 
     private void initialize(){
-        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        generoColumn.setCellValueFactory(new PropertyValueFactory<>("genero"));
-        anoColumn.setCellValueFactory(new PropertyValueFactory<>("ano"));
+        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nomeColumn"));
+        generoColumn.setCellValueFactory(new PropertyValueFactory<>("generoColumn"));
+        anoColumn.setCellValueFactory(new PropertyValueFactory<>("anoColumn"));
 
-        albumTableView.setItems(FXCollections.observableArrayList(Album.listarAlbums()));
+        albumTableView.setItems(FXCollections.observableArrayList(Album.listarAlbum()));
     }
 
     @FXML
@@ -71,7 +71,7 @@ public class AlbumController {
         generoTextField.clear();
         anoTextField.clear();
 
-        albumTableView.setItems(FXCollections.observableArrayList(Album.listarAlbums()));
+        albumTableView.setItems(FXCollections.observableArrayList(Album.listarAlbum()));
     }
 
     public void cadastrarAlbum(ActionEvent actionEvent){

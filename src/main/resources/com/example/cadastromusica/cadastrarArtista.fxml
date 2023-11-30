@@ -13,14 +13,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000505;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cadastromusica.Controller.ArtistaController">
 
-      <Button fx:id="homebutton" mnemonicParsing="false" onAction="#backHome" style="-fx-background-color: #000505;" text="⇦" textAlignment="CENTER" textFill="#2ba84a">
-         <font>
+    <Button fx:id="homebutton" mnemonicParsing="false" onAction="#backHome" style="-fx-background-color: #000505;" text="⇦" textAlignment="CENTER" textFill="#2ba84a">
+        <font>
             <Font size="18.0" />
-         </font>
-      </Button>
-      <VBox fx:id="artistaVbox" alignment="CENTER" layoutY="10.0" prefHeight="400.0" prefWidth="610.0">
+        </font>
+    </Button>
+      <VBox fx:id="artistaVbox" alignment="CENTER" layoutY="32.0" prefHeight="378.0" prefWidth="610.0">
 
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
 
@@ -76,12 +77,26 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <TableView fx:id="albumTableView" prefHeight="200.0" prefWidth="600.0">
-               <columns>
-                  <TableColumn fx:id="nomeColumn" prefWidth="200.0" text="Nome" />
-                  <TableColumn fx:id="generoColumn" prefWidth="200.0" text="Genero(s)" />
-                  <TableColumn fx:id="idadeColumn" prefWidth="200.0" text="idade" />
-               </columns>
+            <TableView fx:id="aartistaTableView" prefHeight="200.0" prefWidth="600.0">
+                <columns>
+                    <TableColumn fx:id="nomeColumn" prefWidth="150" text="Nome">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="nome" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="generoColumn" prefWidth="150" text="Genero">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="genero" />
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="idadeColumn" prefWidth="150" text="Idade">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="idade" />
+                        </cellValueFactory>
+                    </TableColumn>
+                </columns>
             </TableView>
 
       </VBox>

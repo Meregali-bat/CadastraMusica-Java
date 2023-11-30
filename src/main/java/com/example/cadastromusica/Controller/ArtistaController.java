@@ -42,9 +42,9 @@ public class ArtistaController {
     private VBox artistaVbox;
 
     private void initialize(){
-        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        generoColumn.setCellValueFactory(new PropertyValueFactory<>("genero"));
-        idadeColumn.setCellValueFactory(new PropertyValueFactory<>("idade"));
+        nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nomeColumn"));
+        generoColumn.setCellValueFactory(new PropertyValueFactory<>("generoColumn"));
+        idadeColumn.setCellValueFactory(new PropertyValueFactory<>("idadeColumn"));
 
         artistaTableView.setItems(FXCollections.observableArrayList(Artista.listarArtista()));
     }

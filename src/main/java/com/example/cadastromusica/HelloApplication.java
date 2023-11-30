@@ -1,9 +1,8 @@
 package com.example.cadastromusica;
 
-import com.example.cadastromusica.Controller.homeController;
+import com.example.cadastromusica.Controller.startController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -13,7 +12,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
-        homeController homeController = fxmlLoader.getController();
+        startController startController = fxmlLoader.getController();
         Scene scene = new Scene(fxmlLoader.load(), 310, 563);
         stage.setTitle("Cadastro musical");
         stage.setScene(scene);

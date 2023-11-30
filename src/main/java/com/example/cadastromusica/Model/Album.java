@@ -5,11 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 public class Album {
 
-    public Album(String nome, String genero, String dataLancamento){
-        this.nome = nome;
-        this.genero = genero;
-        this.dataLancamento = dataLancamento;
-    }
 
     private String nome;
     private String genero;
@@ -39,6 +34,12 @@ public class Album {
         this.dataLancamento = dataLancamento;
     }
 
+    public Album(String nome, String genero, String dataLancamento){
+        this.nome = nome;
+        this.genero = genero;
+        this.dataLancamento = dataLancamento;
+    }
+
     private static final String URL = "jdbc:mysql://localhost:3306/javafx";
     private static final String USUARIO ="root";
     private static final String SENHA = "";
@@ -57,7 +58,7 @@ public class Album {
         }
     }
 
-    public static List<Album> listarAlbums(){
+    public static List<Album> listarAlbum(){
         List<Album> Albums = new ArrayList<>();
         try (Connection connection = DriverManager.getConnection(URL, USUARIO, SENHA)) {
             String sql = "SELECT * FROM album";
@@ -67,14 +68,17 @@ public class Album {
                         String nome = resultSet.getString("nome");
                         String genero = resultSet.getString("genero");
                         String dataLancamento = resultSet.getString("dataLancamento");
-                        Album album = new Album(nome, genero, dataLancamento);
+                        System.out.println(nome+genero+dataLancamento);
+                        Album album = new Album(nome,genero,dataLancamento);
                         Albums.add(album);
+
                     }
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(Albums);
         return Albums;
     }
 
