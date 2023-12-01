@@ -77,4 +77,20 @@ public class AlbumController {
     public void cadastrarAlbum(ActionEvent actionEvent){
     }
 
+    public void excluirAlbum() {
+        Album albumSelecionado = albumTableView.getSelectionModel().getSelectedItem();
+
+        if (albumSelecionado != null) {
+            Album.excluir(albumSelecionado);
+            albumTableView.setItems(FXCollections.observableArrayList(Album.listarAlbum()));
+        } else {
+
+        }
+    }
+
+
+
+
+
+
 }

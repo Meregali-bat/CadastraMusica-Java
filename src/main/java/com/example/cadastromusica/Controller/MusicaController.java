@@ -2,6 +2,7 @@ package com.example.cadastromusica.Controller;
 
 import com.example.cadastromusica.HelloApplication;
 import com.example.cadastromusica.Model.Album;
+import com.example.cadastromusica.Model.Artista;
 import com.example.cadastromusica.Model.Musica;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -77,6 +78,17 @@ public class MusicaController {
     }
 
     public void cadastrarAlbum(ActionEvent actionEvent){
+    }
+
+    public void excluirMusica() {
+        Musica musicaSelecionada = musicaTableView.getSelectionModel().getSelectedItem();
+
+        if (musicaSelecionada != null) {
+            Musica.excluir(musicaSelecionada);
+            musicaTableView.setItems(FXCollections.observableArrayList(Musica.listarMusica()));
+        } else {
+
+        }
     }
 
 }

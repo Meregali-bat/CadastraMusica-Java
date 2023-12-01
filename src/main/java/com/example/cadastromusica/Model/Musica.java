@@ -79,4 +79,16 @@ public class Musica {
         return Musicas;
     }
 
+    public static void excluir(Musica musica) {
+        try (Connection connection = DriverManager.getConnection(URL, USUARIO, SENHA)) {
+            String sql = "DELETE FROM musica WHERE nome = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, musica.getNome());
+                preparedStatement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

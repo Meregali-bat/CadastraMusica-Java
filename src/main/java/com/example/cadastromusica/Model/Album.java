@@ -82,4 +82,35 @@ public class Album {
         return Albums;
     }
 
+    public static void excluir(Album album) {
+        try (Connection connection = DriverManager.getConnection(URL, USUARIO, SENHA)) {
+            String sqlSelect = "SELECT nome, genero, dataLancamento FROM album WHERE nome = ?";
+            try (PreparedStatement preparedStatementSelect = connection.prepareStatement(sqlSelect)) {
+                preparedStatementSelect.setString(1, album.getNome());
+                try (ResultSet resultSet = preparedStatementSelect.executeQuery()) {
+
+                    String sqlInsert = "INSERT INTO excluidos (nome, genero, dataLancamento) VALUES (?, ?, ?)";
+                    try (PreparedStatement preparedStatementInsert = connection.prepareStatement(sqlInsert)) {
+                        while (resultSet.next()) {
+                            preparedStatementInsert.setString(1, resultSet.getString("nome"));
+                            preparedStatementInsert.setString(2, resultSet.getString("genero"));
+                            preparedStatementInsert.setString(3, resultSet.getString("dataLancamento"));
+                            preparedStatementInsert.executeUpdate();
+                        }
+                    }
+                }
+            }
+            String sql = "DELETE FROM album WHERE nome = ?";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                preparedStatement.setString(1, album.getNome());
+                preparedStatement.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }

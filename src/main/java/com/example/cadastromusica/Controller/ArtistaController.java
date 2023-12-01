@@ -78,4 +78,15 @@ public class ArtistaController {
     public void cadastrarArtista(ActionEvent actionEvent){
     }
 
+    public void excluirArtista() {
+        Artista artistaSelecionado = artistaTableView.getSelectionModel().getSelectedItem();
+
+        if (artistaSelecionado != null) {
+            Artista.excluir(artistaSelecionado);
+            artistaTableView.setItems(FXCollections.observableArrayList(Artista.listarArtista()));
+        } else {
+
+        }
+    }
+
 }

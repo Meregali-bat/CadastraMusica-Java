@@ -26,7 +26,7 @@ public class startController {
     void goToAlbum(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(HelloApplication.class.getResource("cadastrarAlbum.fxml"));
-        Scene scene = new Scene(loader.load(),600,380);
+        Scene scene = new Scene(loader.load(),600,420);
         Stage stage = (Stage) homeVbox.getScene().getWindow();
         stage.setTitle("Albums");
         stage.setScene(scene);
@@ -36,7 +36,7 @@ public class startController {
     void goToMusica(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(HelloApplication.class.getResource("cadastrarMusica.fxml"));
-        Scene scene = new Scene(loader.load(),600,380);
+        Scene scene = new Scene(loader.load(),600,420);
         Stage stage = (Stage) homeVbox.getScene().getWindow();
         stage.setTitle("Músicas");
         stage.setScene(scene);
@@ -46,7 +46,7 @@ public class startController {
     void goToArtista(ActionEvent event) throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(HelloApplication.class.getResource("cadastrarArtista.fxml"));
-        Scene scene = new Scene(loader.load(),600,380);
+        Scene scene = new Scene(loader.load(),600,420);
         Stage stage = (Stage) homeVbox.getScene().getWindow();
         stage.setTitle("Artistas");
         stage.setScene(scene);

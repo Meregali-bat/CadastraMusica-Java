@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
         startController startController = fxmlLoader.getController();
-        Scene scene = new Scene(fxmlLoader.load(), 310, 563);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 420);
         stage.setTitle("Cadastro musical");
         stage.setScene(scene);
         stage.show();
